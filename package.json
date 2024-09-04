@@ -1,0 +1,30 @@
+{
+  "name": "infra",
+  "version": "0.1.0",
+  "bin": {
+    "infra": "bin/infra.js"
+  },
+  "scripts": {
+    "build": "echo \"The build step is not required when using JavaScript!\" && exit 0",
+    "cdk": "cdk",
+    "test": "jest",
+    "deploy": "cdk deploy --all",
+    "delete": "cdk destroy --all"
+  },
+  "devDependencies": {
+    "aws-cdk": "2.150.0",
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "@astrojs/react": "^3.6.1",
+    "@cdklabs/generative-ai-cdk-constructs": "^0.1.224",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "aws-cdk-lib": "2.150.0",
+    "cdk-dia": "^0.11.0",
+    "constructs": "^10.0.0",
+    "dotenv": "^16.4.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

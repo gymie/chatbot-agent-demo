@@ -1,0 +1,58 @@
+openapi: 3.0.0
+info:
+  title: Event Registration API
+  version: 1.0.0
+  description: API for registering for an event
+paths:
+  /{name}/{email}/{city}:
+    post:
+      summary: Register for an event
+      description: Register for an event by providing name, email and city to participate in
+      operationId: registerEvent
+      parameters:
+        - name: name
+          in: path
+          description: Participant's name
+          required: true
+          schema:
+            type: string
+        - name: email
+          in: path
+          description: Participant's email
+          required: true
+          schema:
+            type: string
+            format: email
+        - name: city
+          in: path
+          description: Participant's City
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Registration successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: Registration successful
+        "400":
+          description: Registration failed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: fail
+                  message:
+                    type: string
+                    example: Registration failed due to invalid input
